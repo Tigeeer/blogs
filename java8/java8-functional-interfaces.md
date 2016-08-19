@@ -1,7 +1,6 @@
 #Java 8 —— 功能接口
-功能接口只有一个功能显示。比如，有一个compareTo方法的Comparable接口被使用为了比较。Java 8已经定义了大量功能接口，在Lambda表达式中广泛使用。以下是定义在java.util.Function包中的功能接口列表：
+一个功能接口只显示一个功能。比如，`Comparable`接口，包含一个`compareTo`方法来实现比较的目的。`Java 8`已经定义了大量功能接口，在Lambda表达式中广泛使用。以下是定义在`java.util.Function`包中的功能接口列表：
 ```
-S. No.	Interface & Description
 1	BiConsumer<T,U>
 Represents an operation that accepts two input arguments, and returns no result.
 
@@ -130,4 +129,75 @@ Represents a function that produces a long-valued result.
 
 43	UnaryOperator<T>
 Represents an operation on a single operand that produces a result of the same type as its operand.
+```
+###范例
+`Predicate<T>`是一个功能接口，包含一个`test`方法，参数为`Object`类型，返回值为布尔类型。这个接口意味着一个`Object`被检测为真或者假。
+#####Java8Tester.java
+```Java
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Java8Tester {
+   public static void main(String args[]){
+      List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+      // Predicate<Integer> predicate = n -> true
+      // n is passed as parameter to test method of Predicate interface
+      // test method will always return true no matter what value n has.
+
+      System.out.println("Print all numbers:");
+
+      //pass n as parameter
+      eval(list, n->true);
+
+      // Predicate<Integer> predicate1 = n -> n%2 == 0
+      // n is passed as parameter to test method of Predicate interface
+      // test method will return true if n%2 comes to be zero
+
+      System.out.println("Print even numbers:");
+      eval(list, n-> n%2 == 0 );
+
+      // Predicate<Integer> predicate2 = n -> n > 3
+      // n is passed as parameter to test method of Predicate interface
+      // test method will return true if n is greater than 3.
+
+      System.out.println("Print numbers greater than 3:");
+      eval(list, n-> n > 3 );
+   }
+
+   public static void eval(List<Integer> list, Predicate<Integer> predicate) {
+      for(Integer n: list) {
+
+         if(predicate.test(n)) {
+            System.out.println(n + " ");
+         }
+      }
+   }
+}
+```
+输出：
+```
+Print all numbers:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Print even numbers:
+2
+4
+6
+8
+Print numbers greater than 3:
+4
+5
+6
+7
+8
+9
 ```

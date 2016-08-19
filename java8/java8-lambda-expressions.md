@@ -1,15 +1,15 @@
 #Java 8 —— Lambda表达式
-Lambda表达式被Java 8引入并被吹捧为Java 8中最强大的功能。Lambda表达式有助于函数式编程，并且大大简化了开发。
+`Lambda`表达式被`Java 8`引入并且被认为是`Java 8`中最强大的功能。`Lambda`表达式有助于函数式编程，并且大大简化了开发。
 ###语法
-Lambda表达式的语法如下：
+`Lambda`表达式的语法如下：
 ```
 parameter -> expression body
 ```
-以下是Lambda表达式最重要的特征：
+以下是`Lambda`表达式最重要的特征：
 * 可选的类型声明 —— 不需要声明参数的类型，编译器能根据参数的值推断出类型。
-* 可选的括号 —— 不需要声明一个参数在括号里。对于多个参数，括号仍然是必须的。
+* 可选的括号 —— 不需要将参数声明在括号里。如果有多个参数，括号还是必须的。
 * 可选的大括号 —— 如果表达式的主体只包含一个语句则不需要使用大括号。
-* 可选的return关键字 —— 如果表达式的主体只包含一个表达式，编译器能自动返回值；在大括号里则必须指定返回值。
+* 可选的`return`关键字 —— 如果表达式的主体只包含一个表达式，编译器能自动返回值；如果在大括号里则必须指定返回值。
 
 ###范例
 #####Java8Tester.java
@@ -69,12 +69,12 @@ public class Java8Tester {
 Hello Mahesh
 Hello Suresh
 ```
-以下是在上面例子中需要考虑的重要问题：
-* Lambda表达式主要被用于定义一个功能接口的内联实现，即只有一个方法的接口。在上面的例子中，我们使用各种类型Lambda表达式定义MathOperation接口中的operation方法。然后我们定义了GreetingService接口sayMessage方法的实现。
-* Lambda表达式消除了匿名类的需要，并且给予了Java一种简单但是强大的函数式编程能力。
+通过上面的例子需要考虑以下问题：
+* `Lambda`表达式主要用于定义一个功能接口的内联实现，即只有一个方法的接口。在上面的例子中，我们使用各种类型`Lambda`表达式定义`MathOperation`接口中的`operation`方法。然后我们实现了`GreetingService`接口的`sayMessage`方法。
+* `Lambda`表达式消除了匿名类的需要，并且给予了`Java`一种简单但是强大的函数式编程能力。
 
 ###作用域
-使用Lambda表达式，你能引用final变量或有效的final变量（只被分配一次）。如果一个变量被分配两次值，Lambda表达式将抛出一个编译错误。
+使用`Lambda`表达式，你能引用`final`变量或有效的`final`变量（只被分配一次）。如果一个变量被分配两次值，`Lambda`表达式将抛出一个编译错误。
 #####Java8Tester.java
 ```Java
 public class Java8Tester {
@@ -96,6 +96,3 @@ public class Java8Tester {
 ```
 Hello! Mahesh
 ```
-###总结
-* 用Lambda表达式实现接口方法，该接口必须只有一个方法，且参数个数及类型必须相同（要不所有参数都声明类型，要不都不声明）。
-* 作用域与Java规范一样，将Lambda表达式当成方法域即可。

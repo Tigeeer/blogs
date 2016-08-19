@@ -1,8 +1,8 @@
 #Java 8 —— 方法引用
-方法引用通过方法名指向方法，一个方法引用被声明使用::（双冒号）符号，一个方法引用能被使用去指向以下类型方法：
-* 静态方法（Static methods）
-* 实例方法（Instance methods）
-* 构造方法 —— 使用new操作符（TreeSet::new）
+方法引用通过方法名指向方法，使用`::`（双冒号）声明方法引用，方法引用能指向以下类型方法：
+* 静态方法`Static methods`
+* 实例方法`Instance methods`
+* 构造方法`Constructor methods` —— 使用`new`操作符`TreeSet::new`
 
 #####Java8Tester.java
 ```Java
@@ -31,6 +31,4 @@ Ramesh
 Naresh
 Kalpesh
 ```
-在这里，我们通过System.out::println作为一个静态方法引用。
-###总结
-* 方法引用
+在这里，我们通过`System.out::println`引用了一个静态方法。
