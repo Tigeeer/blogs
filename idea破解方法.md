@@ -1,1 +1,1 @@
-http://idea.iteblog.com/key.PHP
+http://idea.iteblog.com/key.php
